@@ -1,0 +1,26 @@
+{
+    "name": "try-cdktf",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "cacheFrom": "ghcr.io/nmemoto/try-cdktf"
+    },
+    "customizations": {
+      "vscode": {
+          "extensions": [
+              "GitHub.vscode-pull-request-github",
+              "eamodio.gitlens"
+          ]
+      }
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/docker-from-docker:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers/features/terraform:1": {
+          "version": "latest"
+      }
+    },
+    "remoteUser": "node",
+    "postCreateCommand": "npm install --global cdktf-cli@latest"
+  }
+  
